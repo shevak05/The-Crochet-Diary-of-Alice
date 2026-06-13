@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Crochet Diary of Alice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --white:#FFFFFF;
+    --cream:#FEED9F;
+    --yellow:#F7D327;
+    --gold:#D0A823;
+    --brown:#504C41;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:var(--brown);
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,var(--cream),var(--yellow));
+    padding:40px 8%;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    flex-wrap:wrap;
+}
+
+.brand img{
+    margin-right:100px;
+    width: 200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:fill;
+    padding:2px;
+ 
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2rem,4vw,4rem);
+    font-weight:700;
+    color:var(--brown);
+    white-space:nowrap;
+    line-height:1.1;
+}
+
+.tagline{
+    margin-top:10px;
+    font-size:1.2rem;
+    color:var(--brown);
+}
+
+.owner{
+    margin-top:15px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 35px;
+    background:rgb(238, 54, 134);
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
+    font-weight:500;
+}
+
+.btn:hover{
+    background:rgb(39, 191, 49);
+}
+ /*scrolling products section */
+
+.products-scroll{
+    width:90%;
+    max-width:1500px;
+    margin:30px auto;
+    overflow:hidden;
+    padding:15px;
+    border-radius:25px;
+    position:relative;
+}
+
+.products-track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation:scrollLeft 25s linear infinite;
+}
+
+.products-track .card{
+    width:150px;
+    min-width:150px;
+    margin:0;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+
+
+@keyframes scrollLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+.products-track .card{
+    min-width:100px;
+    max-width:150px;
+    flex-shrink:0;
+    margin:10px;
+    border-radius:50px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.products-track .card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    display:block;
+}
+/* SECTIONS */
+
+.section{
+    padding:5px 8%;
+}
+
+.title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:10px;
+    color:var(--brown);
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border:2px solid var(--cream);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.card h3{
+    color:var(--brown);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+}
+
+.price{
+    margin-top:12px;
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--gold);
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--cream);
+    padding:25px;
+    border-radius:30px;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border:2px solid var(--cream);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+/* FOOTER */
+
+footer{
+    background:rgb(251, 210, 89);
+    color:rgb(255, 255, 255);
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer p{
+    margin-top:5px;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+body{
+    min-width:1200px;
+}
+
+header{
+    padding:40px 8%;
+}
+
+.brand{
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:nowrap;
+}
+
+.brand img{
+    width:180px;
+    height:180px;
+    margin-right:60px;
+}
+
+.logo{
+    font-size:3rem;
+    white-space:nowrap;
+}
+
+.products{
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.products-scroll{
+    width:90%;
+}
+
+.products-track{
+    animation-duration:25s;
+}
+
+.section{
+    padding:80px 8%;
+}
+
+.title{
+    font-size:3rem;
+}
+
+.about{
+    padding:25px;
+}
+
+.contact-box{
+    padding:40px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="brand">
+
+<img src="Crochet Charm Poster for Alice.png" alt="Logo">
+
+<div>
+
+<h1 class="logo">The Crochet Diary of Alice</h1>
+
+<p class="tagline">
+Threads of Life, Stitched with Love
+</p>
+
+<div class="owner">
+<p><strong>Owner:</strong> Blessy</p>
+<p><strong>Instagram:</strong> @thecrochetdiaryofalice</p>
+</div>
+
+<a class="btn"
+href="https://instagram.com/thecrochetdiaryofalice"
+target="_blank">
+Visit Instagram
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- PRODUCTS Scroll --> 
+ <h3 style="
+margin:25px 130px 15px;
+font-size:28px;
+font-family:'Cormorant Garamond',serif;
+color:#504C41;">
+    ✨ Highlighted Products ✨
+</h3>
+<div class="products-scroll">
+
+    <div class="products-track">
+
+        <!-- Original Set -->
+        <div class="card">
+            <img src="1.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="2.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="3.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="4.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="5.jpeg" alt="">
+        </div>
+
+
+        <div class="card">
+            <img src="6.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="7.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="8.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="9.jpeg" alt="">
+        </div>
+
+        <div class="card">
+            <img src="10.jpeg" alt="">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="section">
+
+<h2 class="title">Handmade Collection</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="1.jpeg" alt="Sunflower Crochet">
+<div class="card-content">
+<h3>Sunflower Crochet</h3>
+<p>Personalized crochet artwork crafted with vibrant sunflower designs.</p>
+<div class="price">₹200</div>
+</div>
+</div>
+
+<div class="card">
+<img src="2.jpeg" alt="Evil Eye keychain">
+<div class="card-content">
+<h3>Evil Eye keychain</h3>
+<p>Handmade protective charm keychain with crochet detailing.</p>
+<div class="price">₹60</div>
+</div>
+</div>
+
+<div class="card">
+<img src="3.jpeg" alt="Sun Flower Bag">
+<div class="card-content">
+<h3>Sun Flower Bag</h3>
+<p>Stylish handcrafted crochet bag featuring sunflower patterns.</p>
+<div class="price">₹450</div>
+</div>
+</div>
+
+<div class="card">
+<img src="4.jpeg" alt="Rose Mini">
+<div class="card-content">
+<h3>Rose Mini</h3>
+<p>Elegant miniature crochet rose perfect for gifting.</p>
+<div class="price">₹70</div>
+</div>
+</div>
+
+<div class="card">
+<img src="5.jpeg" alt="2 Roses">
+<div class="card-content">
+<h3>2 Roses - ₹250 </h3>
+<h3>3 Roses - ₹300</h3>
+<p>Beautiful crochet flower set made with premium yarn.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="6.jpeg" alt="Two Flower">
+<div class="card-content">
+<h3>Two Flower</h3>
+<p>Beautiful crochet flower make lovers each other.</p>
+<div class="price">₹75</div>
+</div>
+</div>
+
+<div class="card">
+<img src="7.jpeg" alt="Mini Toy">
+<div class="card-content">
+<h3>Mini Toy</h3>
+<p>Soft and adorable handmade crochet toy for all ages.</p>
+<div class="price">₹175</div>
+</div>
+</div>
+
+<div class="card">
+<img src="8.jpeg" alt="Cat">
+<div class="card-content">
+<h3>Cat</h3>
+<p>Charming crochet cat crafted with attention to detail.</p>
+<div class="price">₹450</div>
+</div>
+</div>
+
+<div class="card">
+<img src="9.jpeg" alt="Batman">
+<div class="card-content">
+<h3>Batman</h3>
+<p>Superhero-inspired crochet collectible for fans.</p>
+<div class="price">₹500</div>
+</div>
+</div>
+
+<div class="card">
+<img src="10.jpeg" alt="Spider Man">
+<div class="card-content">
+<h3>Spider Man</h3>
+<p>Handmade Spider-Man crochet figure full of character.</p>
+<div class="price">₹165</div>
+</div>
+</div>
+
+<div class="card">
+<img src="11.jpeg" alt="Bear Keychain">
+<div class="card-content">
+<h3>Bear Keychain</h3>
+<p>Cute teddy bear crochet keychain for daily use.</p>
+<div class="price">₹175</div>
+</div>
+</div>
+
+<div class="card">
+<img src="12.jpeg" alt="Panda Keychain">
+<div class="card-content">
+<h3>Panda Keychain</h3>
+<p>Adorable panda crochet accessory and gift item.</p>
+<div class="price">₹190</div>
+</div>
+</div>
+
+<div class="card">
+<img src="13.jpeg" alt="Duck">
+<div class="card-content">
+<h3>Duck</h3>
+<p>Premium crochet duck plush made with soft yarn.</p>
+<div class="price">₹800</div>
+</div>
+</div> 
+
+<div class="card">
+<img src="14.jpeg" alt="Big toy">
+<div class="card-content">
+<h3>Big toy</h3>
+<p>Large handcrafted crochet toy designed for display and play.</p>
+<div class="price">₹1000</div>
+</div>
+</div>
+
+<div class="card">
+<img src="15.jpeg" alt="Hair Tie">
+<div class="card-content">
+<h3>Hair Tie </h3>
+<p>Fashionable crochet hair accessory with floral charm.</p>
+<div class="price">₹85</div>
+</div>
+</div>
+
+<div class="card">
+<img src="16.jpeg" alt="Spider-Man Beanie Cap">
+<div class="card-content">
+<h3>Spider-Man Beanie Cap</h3>
+<p>Warm handmade beanie cap inspired by Spider-Man.</p>
+<div class="price">₹550</div>
+</div>
+</div>
+
+<div class="card">
+<img src="17.jpeg" alt="Hand Bag">
+<div class="card-content">
+<h3>Hand Bag</h3>
+<p>Elegant crochet handbag suitable for everyday fashion.</p>
+<div class="price">₹400</div>
+</div>
+</div>
+
+<div class="card">
+<img src="18.jpeg" alt="Scarf">
+<div class="card-content">
+<h3>Scarf</h3>
+<p>Soft and cozy crochet scarf crafted for comfort.</p>
+<div class="price">₹1200</div>
+</div>
+</div>
+
+<div class="card">
+<img src="19.jpeg" alt="Bag">
+<div class="card-content">
+<h3>Bag</h3>
+<p>Stylish handcrafted crochet bag for everyday use.</p>
+<div class="price">₹850</div>
+</div>
+</div>
+
+<div class="card">
+<img src="20.jpeg" alt="Swinging / Bouncing Flower">
+<div class="card-content">
+<h3>Swinging Flower</h3>
+<p>Fun decorative crochet flower that moves playfully.</p>
+<div class="price">₹175</div>
+</div>
+</div>
+
+<div class="card">
+<img src="21.jpeg" alt="Hibiscus Flower">
+<div class="card-content">
+<h3>Hibiscus Flower</h3>
+<p>Beautiful crochet hibiscus flower for home decoration.</p>
+<div class="price">₹800</div>
+</div>
+</div>
+
+<div class="card">
+<img src="22.jpeg" alt="Hand Gloves">
+<div class="card-content">
+<h3>Hand Gloves</h3>
+<p>Comfortable crochet gloves made for warmth and style.</p>
+<div class="price">₹450</div>
+</div>
+</div> 
+
+<div class="card">
+<img src="23.jpeg" alt="Home Decorative Item">
+<div class="card-content">
+<h3>Home Decorative Item</h3>
+<p>Unique handmade crochet décor piece for your home.</p>
+<div class="price">₹90</div>
+</div>
+</div> 
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section">
+
+<div class="about">
+
+<h2 class="title">About The Brand</h2>
+
+<p>
+The Crochet Diary of Alice is a handmade crochet brand founded by Blessy.
+Every piece is crafted with care, creativity, and love. From custom name
+crochet art and amigurumi dolls to baby wear and keepsakes, each product
+is designed to bring warmth, beauty, and happiness.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section">
+
+<h2 class="title">Order Now</h2>
+
+<div class="contact-box">
+
+<h3>The Crochet Diary of Alice</h3>
+
+<p>Custom Orders Available</p>
+
+<br>
+
+<p><strong>Owner:</strong> Blessy</p>
+<p><strong>Instagram:</strong> @thecrochetdiaryofalice</p>
+
+<br>
+
+<a class="btn"
+href="https://instagram.com/thecrochetdiaryofalice"
+target="_blank">
+Place an Order
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>The Crochet Diary of Alice</h2>
+
+<p>~Handmade Crochet Creations</p>
+
+<p>Made with ♥ by Blessy</p>
+
+
+</footer>
+
+</body>
+</html>
+
+<script>
+const track = document.querySelector('.products-track');
+track.innerHTML += track.innerHTML;
+</script>
