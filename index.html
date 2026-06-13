@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+    
 *{
     margin:0;
     padding:0;
@@ -158,7 +159,13 @@ header{
     margin-bottom:10px;
     color:var(--brown);
 }
-
+/* HIGHLIGHT */
+.highlight h3{
+margin:25px 130px 15px;
+font-size:28px;
+font-family:'Cormorant Garamond',serif;
+color:#504C41;
+}
 /* PRODUCTS */
 
 .products{
@@ -242,29 +249,24 @@ footer{
 footer p{
     margin-top:5px;
 }
-    
-html,
-body{
-    width:100%;
-    overflow-x:hidden;
-} 
-    
+
 /* MOBILE */
 @media (max-width:768px){
+
 body{
-        zoom:0.25;
+    zoom:0.25;
     min-width:1200px;
 }
 
 header{
-    padding:40px 8%;
+    padding:60px 1%;
 }
 
 .tagline{
-    font-size:2.5rem;
+    font-size:3.1rem;
 }
 .owner{
-    font-size:1.8rem;
+    font-size:2.4rem;
 }
 .brand{
     flex-direction:row;
@@ -284,9 +286,17 @@ header{
     font-size:3rem;
     white-space:nowrap;
 }
-
+.btn{
+    font-size:2.4rem;
+    padding:20px 50px;
+}
+.highlight h3{
+    margin:25px 60px 15px;
+    font-size:38px;
+}
 .products{
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    font-size:1.8rem;
 }
 
 .products-scroll{
@@ -302,7 +312,10 @@ header{
 }
 
 .title{
-    font-size:3rem;
+    font-size:4rem;
+}
+
+
 }
 
 .about{
@@ -351,13 +364,10 @@ Visit Instagram
 </header>
 
 <!-- PRODUCTS Scroll --> 
- <h3 style="
-margin:25px 130px 15px;
-font-size:28px;
-font-family:'Cormorant Garamond',serif;
-color:#504C41;">
+ <div class="highlight">
+ <h3 >
     ✨ Highlighted Products ✨
-</h3>
+</h3></div>
 <div class="products-scroll">
 
     <div class="products-track">
